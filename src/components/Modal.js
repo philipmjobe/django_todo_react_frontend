@@ -39,6 +39,7 @@ export default class CustomModal extends Component {
               <Input
                 type="text"
                 id="todo-description"
+                name="description"
                 value={this.state.activeItem.description}
                 onChange={this.handleChange}
                 placeholder="Enter Todo description"
@@ -52,6 +53,7 @@ export default class CustomModal extends Component {
                   checked={this.state.activeItem.completed}
                   onChange={this.handleChange}
                 />
+                Completed
               </Label>
             </FormGroup>
           </Form>
