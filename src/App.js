@@ -50,7 +50,7 @@ class App extends Component {
 
   refreshList = () => {
     axios
-      .get("/api/todos")
+      .get("/api/todos/")
       .then((res) => this.setState({ todoList: res.data }))
       .catch((err) => console.log(err));
   };
@@ -62,10 +62,10 @@ class App extends Component {
   handleSubmit = (item) => {
     this.toggle();
     if (item.id) {
-      axios.put(`/api/todos/${item.id}`, item).then((res) => this.refreshList);
+      axios.put(`/api/todos/${item.id}/`, item).then((res) => this.refreshList());
       return;
     }
-    axios.post("/api/todos", item).then((res) => this.refreshList());
+    axios.post("/api/todos/", item).then((res) => this.refreshList());
   };
 
   handleDelete = (item) => {
